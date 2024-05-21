@@ -10,8 +10,12 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2.3.2
+      - name: Clear NPM cache
+        run: npm cache clean --force
+      - name: Update NPM
+        run: npm install -g npm@latest
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps      
+        run: npm install       
       - name: Build
         env:
           CI: false        
