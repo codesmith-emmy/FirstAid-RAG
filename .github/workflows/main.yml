@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2.3.2
       - name: Install Dependencies
-        run: npm install      
+        run: npm install --legacy-peer-deps      
       - name: Build
         env:
           CI: false        
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2.3.2
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
